@@ -75,13 +75,36 @@ class FlowControlStructures {
   //   z++;
   // }
 
-  int y = 100;
-    while (y >= 0) // WHAT DO I REPLACE cONDITIONAL_EXPRESSION WITH?
-  {
-    Console.WriteLine(y);
-    y--;
+  // int y = 100;
+  //   while (y >= 0) // WHAT DO I REPLACE cONDITIONAL_EXPRESSION WITH?
+  // {
+  //   Console.WriteLine(y);
+  //   y--;
+  // }
+   
+  // for loops are like playing go fish.
+  // you know how many cards are in you hand.
+  // used when you know how many loops you need ahead of time.
 
-    //testtt
+  /*
+  for (statements1; statement2; statement3)
+  
   }
+  {
+    code to run each time through loop.
   }
+  statement1 = code to run ONE TIME before the loop starts.
+  statement2 = CONDITIONAL EXPRESSION to check EACH TIME before loop runs.
+  statement3 = code to run AFTER each loop.
+
+  Each 'trip' through the loop is called an ITERATION.
+  */
+
+  // counting to 10
+  for (int i = 0; i <= 10; i++)
+  {
+    Console.WriteLine(i);
+  }
+
+  //test
 }
