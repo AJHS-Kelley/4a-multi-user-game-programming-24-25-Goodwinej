@@ -153,7 +153,7 @@ class dDataTypesOperator {
     // console.writeline("your player name is" + playerName);
 
     // INPUTTING NUMBERS FROM THE CONSOLE.
-    cosnole.writeline('How many tiktoks can you like in 5 minutes? enter and interger value and press enter.\n');
+    console.writeline('How many tiktoks can you like in 5 minutes? enter and interger value and press enter.\n');
     Int numTiktoks = console.writeline = Convert.ToInt32(console.ReadLine());
     Console.WriteLine(numTiktoks + numTiktoks );
 
