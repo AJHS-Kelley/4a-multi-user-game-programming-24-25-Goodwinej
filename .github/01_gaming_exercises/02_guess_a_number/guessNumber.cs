@@ -9,7 +9,7 @@ class GuessNumber {
   // Generates the secret number here.
   Random rnd = new Random(); // create an object name "rnd" that is a copy of the Random()
   int secretNumber = rnd.Next(100); // generate from 0 to 99
-  Console.WriteLine(secretNumber);
+  // Console.WriteLine(secretNumber);
   // int secretNumber = rnd.Next(23, 200); // generate from 25 to 199
 
   // while loop
