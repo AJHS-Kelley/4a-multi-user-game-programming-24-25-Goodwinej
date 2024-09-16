@@ -23,10 +23,24 @@ class FlowControlStructures {
     //   Console.WriteLine ('You ar enot old enough to vote OR register. \n');
     // }
 
-  
+    // /* 
+    /* you can have a single if statement by itself.
+    If you have an else you MUST also have an if.
+    You can have as many else if statements as you need.
+    FOR NOW, USE THE else CONDITION TO PRINT ERROR MESSAGES / LOGS
+    
+    Int age;
+    if (age .= 0)
+    {
+      Console.writeline("Age stored. \n");
+    }
+    {
+      else
+    {
+      Console.WriteLine("No age value detected. Please review. \n" )
+    }
 
-
-
+    // switch statements
     // int day = 1;
     // switch(day)
     // {
@@ -106,6 +120,8 @@ class FlowControlStructures {
     Console.WriteLine(i);
   }
 
-  //test
-  
+  for (int i = 0; i <= 10; i++)
+  {
+    Console.Writeline(i);
+  }
 }
