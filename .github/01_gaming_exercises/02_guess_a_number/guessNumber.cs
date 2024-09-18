@@ -35,7 +35,7 @@ class GuessNumber {
       break;
     }
     if (NumGuess >= MaxGuess)
-    Console.WriteLine("you have lost the game. \n your grandparents are disappointed in you. \n")
+    Console.WriteLine("you have lost the game. \n you suckkkkk. \n")
   }
 
      // Allow them to guess a number
