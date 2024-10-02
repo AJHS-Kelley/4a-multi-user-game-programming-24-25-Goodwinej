@@ -1,153 +1,97 @@
 using System;
-
 class RPS {
   static void Main() {
-    // player value
-    string playerName = "Test player";
+    // PLAYER VARIABLE
     int playerScore = 0;
     string playerChoice = "";
+    int numDraws = 0;
 
     // CPU VARIABLES
     int cpuScore = 0;
     string cpuChoice = "";
+    
 
-    Console.WriteLine(" hello, i am your friendly Rock paper scissors bot!\n");
-    Console.WriteLine("Please tell me your name.\n");
-    playerName = console.ReadLine();
-    Console.WriteLine("Hey there {playerName}. is this you name?\n");
-    Console.WriteLine("please type yes or no, then press enter.\n");
-    string isCorrect = console.ReadLine().Tolower();
 
-    if (isCorrect == "yes")
+    // TESTING GAME LOOP
+    int loopCount = 0;
+    int loopReqs = 0;
+    Console.WriteLine("How many loops do you need?\nType an INTEGER and press ENTER.");
+    loopReqs = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("  ");
+    Random rnd = new Random();
+    while (loopCount < loopReqs)
     {
-      Console.WriteLine("Great! i'll call you {player name}.\n");
+      // ALLOW CPU to select randomly.
+      int cpuRand = rnd.Next(0,3);
+
+      if (cpuRand == 0)
+      {
+        cpuChoice = "rock";
+      }
+      else if (cpuRand == 1)
+      {
+        cpuChoice = "paper";
+      }
+      else if (cpuRand == 2)
+      {
+        cpuChoice = "scissor";
+      }
+      else
+      {
+        Console.WriteLine("Unable to determine cpu choice.\n");
+      }
+
+      // COMPARE THE TWO CHOICES AND DETERMINE A WINNER.
+      if (playerChoice == "rock" && cpuChoice == "paper")
+      {
+        cpuScore++;
+      }
+      else if (playerChoice == "rock" && cpuChoice == "scissor")
+      {
+        playerScore++;
+      }
+      else if (playerChoice == "rock" && cpuChoice == "rock")
+      {
+        numDraws++;
+      }
+      else if (playerChoice == "paper" && cpuChoice == "paper")
+      {
+        numDraws++;
+      }
+      else if (playerChoice == "paper" && cpuChoice == "scissor")
+      {
+        cpuScore++;
+      }
+      else if (playerChoice == "paper" && cpuChoice == "rock")
+      {
+        playerScore++;
+      }
+      else if (playerChoice == "scissor" && cpuChoice == "scissor")
+      {
+        numDraws++;
+      }
+      else if (playerChoice == "scissor" && cpuChoice == "paper")
+      {
+        playerScore++;
+      }
+      else if (playerChoice == "scissor" && cpuChoice == "rock")
+      {
+        cpuScore++;
+      }
+      loopCount++;
     }
-    else if (isCorrect = "no")
+    if (playerScore > cpuScore)
     {
-      Console.WriteLine("Please restate your name and press enter. \n");
+      Console.WriteLine("Congrats, you beat the bot!!!");
     }
     else
     {
-      Console.WriteLine("unable to register answer. \n");
+      Console.WriteLine("The cpu beat you bud, better luck nxt time. ;(.");
     }
-
-    Console.WriteLine("""
- +===========================================================+ 
- | |
- | WELCOME TO THE ROCK, PAPER, SCISSORS CHALLENGE! |
- +===========================================================+
- You will select from Rock, Paper, or Scissors. 
- The CPU will select one of those choices at random. 
- Then a winner will be determined using the following rules:
- -- Rock Beats Scissors
- -- Paper Beats Rock 
- -- Scissors Beats Paper 
-
- The winner will receive a point. 
- The first player to score 5 points will be declared the winner.
- """);
-
-
-
-
- while (playerScore < 5 && cpuScore < 5)
- {
-  // print score
-  Console.WriteLine("Your score is:{playerScore}\n {cpuScore}\n");
-
-  // allow selection 
-  Console.WriteLine("Choose rock, paper, or scissors, type your answer and press enter.\n");
-
-  playerChoice = console.ReadLine().Tolower();
- }
-
- // allow cpu to select randomly
- random rnd = new random();
- int cpuRand = rnd.Next(0,2);
-
-
-
- if (cpurand == 0)
- {
-  cpuChoice = "rock";
- }
- else if (cpuRand == 1)
-  {
-    cpuChoice = "paper";
-  }
-  else if (cpu cpuRand == 2)
-  {
-    cpuChoice = "scissors"
-  }
-  else
-  {
-    Console.WriteLine ("unable to determine CPU choice.\n");
-  }
-  Console.WriteLine("CPU Choice" + cpuChoice);
-
-  //Compare the two choices and find winner
-  if (playerChoice == "rock" && cpuChoice == "paper")
-  {
-    Console.WriteLine("YOU chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("The CPU WINS!!!\n");
-    cpuscore++;
-  }
-  else if (playerChoice == "rock" && cpuChoice == "scissors")
-  {
-    Console.WriteLine("YOU chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("YoU WIN!!!\n");
-    playerScore++;
-
-  }
-  else if(playerChoice == "rock" && cpuChoice == "rock")
-  {
-    Console.WriteLine("You chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("It's a draw!");
-
-  }
-  else if (playerChoice == "paper" && cpuChoice == "paper")
-  {
-    Console.WriteLine("You chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("It's a draw!");
-
-  }
-  else if (playerChoice == "paper" && cpuChoice == "scissors")
-  {
-    Console.WriteLine("You chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("The CPU wins.\n");
-    cpuScore ++;
-
-  }
-  else if (playerChoice == "paper" && cpuChoice == "rock")
-  {
-    Console.WriteLine("You chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("You win!\n");
-    playerScore++;
-  }
-  else if (playerChoice == "scissors" && cpuChoice "paper")
-  {
-    Console.WriteLine("You chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("You win!\n");
-    playerScore++;
-  }
-  else if (playerChoice == "scissors" && cpuChoice == "scissors")
-  {
-    Console.WriteLine("You chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("It's a draw!"); 
-  }
-  else if (playerChoice == "scissors" && cpuChoice == "rock")
-  {
-    Console.WriteLine("You chose {playerChoice} and the CPU chose {cpuChoice}.\n");
-    Console.WriteLine("The CPU wins.\n");
-    cpuScore++;
-  }
-  if (playerScore > cpuScore)
-  {
-    Console.WriteLine("Congratulations, you are the winner!\n"); 
-  }
-  else
-  {
-    Console.WriteLine("The CPU has defeated you.\n");
-  }
- }
-}
+    Console.WriteLine($"Player score: {playerScore}\n");
+    Console.WriteLine($"Cpu Score: {cpuScore}\n");
+    Console.WriteLine($"Draws: {numDraws}\n");
+    
+  } // DO NOT DELETE THIS EVER!! 3 spaces indented from the left.
+} // DO NOT DELETE THID EVER, ALWASY TOUCHING LEFT MARGIN.
